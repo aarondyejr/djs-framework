@@ -10,7 +10,7 @@
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"allowUnreachableCode": false,
-		"module": "ESNext",
+		"module": "CommonJS",
 		"target": "ESNext",
 		"moduleResolution": "Node",
 		"lib": ["esnext", "ESNext.Disposable"],
