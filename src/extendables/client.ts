@@ -10,7 +10,7 @@ export class ShensuoClient extends Client {
 
 		this.shensuoOptions = shensuoOptions;
 	}
-
+	
 	async registerPlugins() {
 		for (const [index, plugin] of this.shensuoOptions.plugins.entries()) {
 			if (!(plugin instanceof Plugin))

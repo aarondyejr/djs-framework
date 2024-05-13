@@ -1,6 +1,6 @@
 {
-	"name": "djs-framework",
-	"version": "1.0.0",
+	"name": "@shensuo/core",
+	"version": "0.0.1",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
