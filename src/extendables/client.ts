@@ -1,32 +1,48 @@
 import { Client, ClientOptions, Collection } from 'discord.js';
 import { Plugin } from './plugin';
-import { IShensuoOptions } from '../types';
+import { PluginManager } from './pluginmanager';
 
 export class ShensuoClient extends Client {
-	public plugins: Collection<string, Plugin> = new Collection();
-	public shensuoOptions: IShensuoOptions;
-	constructor(clientOptions: ClientOptions, shensuoOptions: IShensuoOptions) {
-		super(clientOptions);
+    public plugins: PluginManager;
+    constructor(token: string, clientOptions: ClientOptions) {
+        super(clientOptions);
 
-		this.shensuoOptions = shensuoOptions;
-	}
-	
-	async registerPlugins() {
-		for (const [index, plugin] of this.shensuoOptions.plugins.entries()) {
-			if (!(plugin instanceof Plugin))
-				throw Error(`At index ${index} it did not inherit class Plugin`);
+        this.plugins = new PluginManager();
 
-			this.plugins.set(plugin.name, plugin);
+        this.token = token;
+    }
 
-			await plugin.handler(this);
+    /**
+     *
+     * @param plugin Plugin you are wanting to load
+     *
+     * @returns {ShensuoClient}
+     */
+    addPlugin(plugin: Plugin): this {
+        if (!(plugin instanceof Plugin))
+            throw new Error('A plugin must inherit from the Plugin class.');
 
-			this.emit('pluginsLoaded');
-		}
-	}
+        if (!plugin.name) throw new Error('A plugin must have a name field.');
+
+        this.plugins.add(plugin);
+
+        return this;
+    }
+
+    /**
+     * Log the bot into the gateway & load any plugins added with `ShensuoClient#addPlugin`.
+     */
+
+    async launch() {
+        for (const [_, plugin] of this.plugins.collection) {
+            await plugin.handler(this);
+        }
+        this.login(this.token!);
+    }
 }
 
 declare module 'discord.js' {
-	export interface ClientEvents {
-		pluginsLoaded: [];
-	}
+    export interface ClientEvents {
+        pluginsLoaded: [];
+    }
 }

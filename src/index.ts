@@ -1,2 +1,1 @@
-export * from './extendables'
-export * from './types'
+export * from './extendables';
