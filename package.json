@@ -1,6 +1,6 @@
 {
     "name": "@shensuo/core",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "description": "Core package for the shensuo framework. Used for loading plugins, and initializing a client.",
     "keywords": [
         "discord",
