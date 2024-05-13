@@ -1,6 +1,6 @@
 import { Client, ClientOptions, Collection } from 'discord.js';
-import { Plugin } from './plugin';
-import { PluginManager } from './pluginmanager';
+import { Plugin } from './plugin.js';
+import { PluginManager } from './pluginmanager.js';
 
 export class ShensuoClient extends Client {
     public plugins: PluginManager;

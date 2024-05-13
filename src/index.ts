@@ -1,1 +1,1 @@
-export * from './extendables';
+export * from './extendables/index.js';

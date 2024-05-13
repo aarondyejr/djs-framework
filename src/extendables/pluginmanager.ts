@@ -1,5 +1,5 @@
 import { Collection } from 'discord.js';
-import { Plugin } from './plugin';
+import { Plugin } from './plugin.js';
 
 export class PluginManager {
     #plugins: Collection<string, Plugin>;

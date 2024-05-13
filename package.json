@@ -2,12 +2,9 @@
     "name": "@shensuo/core",
     "version": "0.0.1",
     "description": "Core package for the shensuo framework. Used for loading plugins, and initializing a client.",
-    "scripts": {
-        "build": "tsup"
-    },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
@@ -17,11 +14,10 @@
     "devDependencies": {
         "@types/node": "^20.12.11",
         "prettier": "^3.2.5",
-        "tslib": "^2.6.2",
-        "tsup": "^8.0.2",
         "typescript": "^5.4.5"
     },
     "files": [
-        "/dist"
-    ]
+        "dist/"
+    ],
+    "type": "module"
 }
