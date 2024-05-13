@@ -2,11 +2,17 @@
     "name": "@shensuo/core",
     "version": "0.0.1",
     "description": "Core package for the shensuo framework. Used for loading plugins, and initializing a client.",
-    "keywords": ["discord", "discord-bot", "command-handler", "framework", "discord-framework", "discord.js"],
+    "keywords": [
+        "discord",
+        "discord-bot",
+        "command-handler",
+        "framework",
+        "discord-framework",
+        "discord.js"
+    ],
     "author": "CollegeCrafts (https://github.com/collegecrafts)",
     "license": "MIT",
     "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "dependencies": {
         "discord.js": "^14.15.2"
@@ -14,9 +20,6 @@
     "devDependencies": {
         "@types/node": "^20.12.11",
         "prettier": "^3.2.5"
-    },
-    "devDependencies": {
-        "typescript": "^5.4.5"
     },
     "files": [
         "dist/"

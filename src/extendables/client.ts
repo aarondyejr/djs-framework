@@ -34,9 +34,10 @@ export class ShensuoClient extends Client {
      */
 
     async launch() {
-        for (const [_, plugin] of this.plugins.collection) {
+        for (const plugin of this.plugins.collection.values()) {
             await plugin.handler(this);
         }
+
         this.login(this.token!);
     }
 }
