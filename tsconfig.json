@@ -10,12 +10,12 @@
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"allowUnreachableCode": false,
-		"module": "CommonJS",
+		"module": "ESNext",
 		"target": "ESNext",
-		"moduleResolution": "Node",
+		"moduleResolution": "Bundler",
 		"lib": ["esnext", "ESNext.Disposable"],
 		"esModuleInterop": true,
 		"declaration": true,
-		"noEmitHelpers": true
+		"importHelpers": true,
 	}
 }

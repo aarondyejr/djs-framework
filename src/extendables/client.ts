@@ -3,7 +3,7 @@ import { Plugin } from './plugin';
 import { IShensuoOptions } from '../types';
 
 export class ShensuoClient extends Client {
-	public plugins: Collection<number, Plugin> = new Collection();
+	public plugins: Collection<string, Plugin> = new Collection();
 	public shensuoOptions: IShensuoOptions;
 	constructor(clientOptions: ClientOptions, shensuoOptions: IShensuoOptions) {
 		super(clientOptions);
@@ -16,7 +16,7 @@ export class ShensuoClient extends Client {
 			if (!(plugin instanceof Plugin))
 				throw Error(`At index ${index} it did not inherit class Plugin`);
 
-			this.plugins.set(plugin.id, plugin);
+			this.plugins.set(plugin.name, plugin);
 
 			await plugin.handler(this);
 

@@ -2,7 +2,7 @@ import { ClientOptions } from 'discord.js';
 import { Plugin } from './extendables/plugin';
 
 export interface IPluginOptions {
-	id: number;
+	name: string;
 }
 
 export interface IShensuoOptions {

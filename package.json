@@ -2,20 +2,24 @@
 	"name": "@shensuo/core",
 	"version": "0.0.2",
 	"description": "Core package for the shensuo framework. Used for loading plugins, and initializing a client.",
-	"main": "./dist/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "tsup"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"dependencies": {
 		"discord.js": "^14.15.2"
 	},
 	"devDependencies": {
 		"@types/node": "^20.12.11",
-		"prettier": "^3.2.5"
+		"prettier": "^3.2.5",
+		"tslib": "^2.6.2",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.5"
 	},
 	"files": [
 		"/dist"
