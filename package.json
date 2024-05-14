@@ -1,7 +1,7 @@
 {
     "name": "@shensuo/core",
     "version": "0.0.4",
-    "description": "Core package for the shensuo framework. Used for loading plugins, and initializing a client.",
+    "description": "Shensuo is a plugin based framework. It allows you to plug n play the features you want, keeping out the ones you don't!",
     "keywords": [
         "discord",
         "discord-bot",
